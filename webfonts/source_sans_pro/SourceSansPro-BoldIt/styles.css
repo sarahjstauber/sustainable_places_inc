@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: 'SourceSansPro-BoldIt';
+  src: url('SourceSansPro-BoldIt.eot?#iefix') format('embedded-opentype'),  url('SourceSansPro-BoldIt.otf')  format('opentype'),
+	     url('SourceSansPro-BoldIt.woff') format('woff'), url('SourceSansPro-BoldIt.ttf')  format('truetype'), url('SourceSansPro-BoldIt.svg#SourceSansPro-BoldIt') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

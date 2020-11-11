@@ -1,0 +1,348 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustainable Places&reg;, Inc.</title>
+<script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+<script type="text/javascript" src="js/modernizr-custom.js"></script>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/respond.min.js"></script>
+<link rel="icon" href="img/icon.png">
+<style>
+.cycle-slideshow {
+	font-family: sans-serif;
+	font-weight: 700;
+	display: block;
+	clear: both;
+	width: 100%;
+	max-width: 2000px;
+	margin: 0 auto 2em auto;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+.cycle-slideshow img {
+	max-width: 100%;
+}
+.cycle-prev, .cycle-next {
+	font-size: 200%;
+	color: #FFF;
+	display: block;
+	margin-top: -16px;
+	position: absolute;
+	top: 50%;
+	z-index: 999;
+	cursor: pointer;
+	opacity: 0.45;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+}
+.cycle-prev:hover, .cycle-next:hover {
+	opacity: 1.0;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+}
+.cycle-prev {
+	left: 2%;
+}
+.cycle-next {
+	right: 2%;
+}
+.cycle-pager {
+	text-align: center;
+	width: 100%;
+	position: absolute;
+	bottom: 2%;
+	z-index: 999;
+	cursor: pointer;
+	opacity: 0.85;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+}
+.cycle-pager:hover {
+	opacity: 1.0;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+}
+.cycle-pager span {
+	text-indent: 100%;
+	white-space: nowrap;
+	display: inline-block;
+	width: 7.5px;
+	height: 7.5px;
+	margin: 0 11px;
+	border: 1px solid #FFF;
+	border-radius: 50%;
+	background-color: #FFF;
+	opacity: 0.4;
+}
+.cycle-pager .cycle-pager-active {
+	background-color: #FFF;
+	opacity: 1.0;
+}
+.book {
+	clear: both;
+	float: left;
+	margin-left: 0;
+	width: 100%;
+	display: block;
+}
+#info {
+	clear: none;
+	float: left;
+	width: 100%;
+	display: block;
+}
+#info p {
+	margin-bottom: 7px;
+}
+#newsletter {
+	text-align: center;
+	clear: both;
+	margin: 20px auto 0 auto;
+	width: 100%;
+	display: block;
+	padding: 20px 0;
+	background-color: #EFEFEF;
+}
+#newsletter h2 {
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	font: 1.75em Georgia, serif;
+	letter-spacing: 0.1em;
+	color: #333;
+}
+#newsletter p {
+	max-width: 800px;
+	margin: 12px auto;
+	padding: 0 20px;
+	font: 200 1.0625em Seravek, sans-serif;
+	line-height: 155%;
+	color: #333;
+	margin-bottom: 15px;
+}
+#newsletter input {
+	line-height: 1.5em;
+	font-size: 1.05em;
+	font-family: Seravek, sans-serif;
+	font-weight: 300;
+	border-style: solid;
+}
+#newsletter input[type="email"] {
+	margin-right: 3px;
+	background-color: #FDFDFD;
+	padding: 9px 16px;
+	color: #A9A9A9;
+	width: 65%;
+	max-width: 320px;
+	letter-spacing: 0.03em;
+	border-width: 1px;
+	border-color: #CCC;
+	/*position: relative;
+	display: inline-block;*/
+}
+#newsletter input[type="email"]:focus {
+	color: #333;
+}
+#newsletter input[type="submit"] {
+	margin-left: 3px;
+	background-color: #6EAF79;
+	color: #FFF;
+	left: -5px;
+	border: 0 none;
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	font-weight: 400;
+	cursor: pointer;
+	transition: color, background-color 0.5s;
+	-webkit-transition: color, background-color 0.5s;
+	-moz-transition: color, background-color 0.5s;
+}
+#newsletter input[type="submit"]:hover {
+	background-color: #333;
+	color: #FDFDFD;
+	transition: color, background-color 0.5s;
+	-webkit-transition: color, background-color 0.5s;
+	-moz-transition: color, background-color 0.5s;
+}
+@media only screen and (max-width: 768px) {
+	.cycle-slideshow {
+	margin-bottom: 10px;
+	}
+	#info {
+		margin-top: 0;
+	}
+	.book {
+		padding-top: 20px;
+		margin-bottom: 10px;
+	}
+	#newsletter {
+		margin: 15px auto 0 auto;
+	}
+	#newsletter input[type="submit"] {
+		width: 50px;
+		padding: 10px 10px;
+		border-radius: 15%;
+	}
+}
+@media only screen and (min-width: 769px) {
+	.cycle-slideshow {
+		clear: both;
+		width: 100%;
+		display: block;
+	}
+	.book {
+		clear: both;
+		float: left;
+		margin-left: 0;
+		width: 27.5%;
+		display: block;
+		max-width: 200px;
+	}
+	#info {
+		clear: none;
+		float: left;
+		margin-left: 2.2%;
+		width: 70.3%;
+		display: block;
+	}
+	#newsletter {
+		clear: both;
+		float: left;
+		margin-left: 0;
+		width: 100%;
+		display: block;
+	}
+	#newsletter input[type="submit"] {
+		padding: 10px 30px;
+	}
+}
+</style>
+</head>
+<body>
+	<div id="title-full">
+    	<img src="img/logo-text3.svg" alt="Sustainable Places, Inc." />
+    </div>
+    <ul id="nav">
+    	<li class="nav-item"><a href="index.html" class="current">Home</a></li>
+        <li class="nav-item"><a href="services.html">Services</a>
+        	<div class="hidden">
+            	<a href="services/landscape-construction.html">Landscape Design <br>&amp; Construction</a>
+            	<a href="services/site_care.html">Site Care</a>
+            	<a href="services/architecture-planning.html">Architecture <br>&amp; Planning</a>
+            </div>
+        </li>
+        <li class="nav-item"><a href="projects.html">Projects</a>
+        	<div class="hidden">
+            	<a href="projects/sustainable_landscapes.html">Sustainable Landscapes</a>
+            	<a href="projects/urban_design-planning.html">Municipal Planning</a>
+            </div>
+        </li>
+        <li class="nav-item"><a href="contact.html">Contact</a>
+        	<div class="hidden">
+            	<a href="contact/our_team.html">Our Team</a>
+            	<a href="contact/testimonials.html">Testimonials</a>
+            </div>
+        </li>
+        <li class="nav-item"><a href="resources.html">Resources</a>
+        	<div class="hidden">
+            	<a href="resources/blog.html">Blog</a>
+                <a href="resources/publications.html">Publications</a>
+            	<a href="resources/sponsors.html">Sponsors</a>
+                <a href="resources/FAQ.html">FAQ</a>
+            </div>
+        </li>
+    </ul>
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+	<label for="nav-trigger"></label>
+    
+    <div class="site-wrap">
+        <div id="title-mobile">
+            <img src="img/logo-text3.svg" alt="Sustainable Places, Inc." />
+        </div>
+        <div class="cycle-slideshow">
+        	<span class="cycle-prev">&#9001;</span>
+        	<span class="cycle-next">&#9002;</span>
+        	<span class="cycle-pager"></span>
+            <img src="img/home/flood.jpg" alt="Fload Prevention" />
+            <img src="img/home/design.jpg" alt="Sustainable Landscapes" />
+            <img src="img/home/wildlife.jpg" alt="Create Habitats for Wildlife" />
+            <img src="img/home/monarch.jpg" alt="Monarchs" />
+            <img src="img/home/dog.jpg" alt="Family and Pet Friendly" />
+        </div>
+        <div class="main-content">
+            <div class="book">
+                <a href="publications/new_book.html"><img class="full" src="img/home/book.jpg" alt="book" /></a>
+            </div>
+            <div id="info">
+                <h2>Our Sustainable Future</h2>
+                <p>Since 1985, Sustainable Places&reg; has been dedicated to sustainable, healthy Landscape Architecture, Urban Design, and Architecture. We can help you with expert design, construction, and maintenance of beautiful landscapes, homes, dependable building repair &amp; renovation. We specialize in solving the most challenging stormwater and flooding problems. Our designs provide the best value because we consider all of the &quot;Specialties&quot; that make places work sustainably.</p>
+                <p>You do have choices. Each building, each landscape is important. By creating places that work with Nature, our designs moderate climate, lower maintenance, alleviate flooding, restore soil fertility, and store carbon. We create value and save you money. From the smallest home and landscape to large-scale planning, Sustainable Places&reg; is proud to help make positive environmental change with beauty and elegance.</p>
+            </div>
+            <div class="book">
+                <a href="publications/new_book.html"><img class="mobile" src="img/home/book.jpg" alt="book" /></a>
+            </div>
+            <div id="newsletter">
+                <h2>Newsletter</h2>
+                <p>You will receive information regarding upcoming community presentations, along with helpful tips and tricks.</p>
+                <form action="http://formspree.io/sarahjstauber@gmail.com" method="post">
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input type="hidden" name="_next" value="thank_you.html" />
+                    <input type="hidden" name="_subject" value="New subscriber for Sustainable Places, Inc.!" />
+                    <input class="full" type="submit" value="Subscribe">
+                    <input class="mobile" type="submit" value="&rarr;">
+                </form>
+            </div>
+        </div>
+        <div id="footer">
+        	<div id="about">
+            	<h3><a href="contact/our_team.html">About</a></h3>
+                <p><a href="resources/blog">Blog</a></p>
+                <p><a href="resources/FAQ">FAQ</a></p>
+                <!--<p><a href="publications.html">Publications</a></p>-->
+            </div>
+            <div id="projects">
+            	<h3><a href="projects.html">Projects</a></h3>
+                <p><a href="projects/sustainable_landscapes.html">Sustainable Landscapes</a></p>
+                <p><a href="projects/municipal_planning.html">Municipal Planning</a></p>
+            </div>
+            <div id="contact">
+            	<h3><a href="contact.html">Contact</a></h3>
+                <div class="mobile"><p><a href="contact/testimonials.html">Testimonials</a></p></div>
+                <div class="full"><p>(847) 679-4921</p></div>
+                <div id="social">
+                	<p><a href="mailto:info@sustainableplaces.com">t</a></p>
+                    <p><a href="https://www.facebook.com/Sustainable-Places-Trademark-Inc-334925969880272/?fref=ts" target="_blank">h</a></p>
+                    <p><a class="mobile" href="tel:847-679-4921">u</a></p>
+                </div>
+            </div>
+            <img src="img/line.png" />
+            <div id="copyright">
+            	<p>&copy; All Rights Reserved Sustainable Places<sup>&reg;</sup>, Inc. 2016</p>
+                <p class="full">&#124; Site by <a href="#">SJS</a></p>
+            </div>
+            <div id="site-legal">
+            	<p class="mobile">Site by <a href="#">SJS</a> &#124;</p>
+                <p><a href="sitemap.html">Sitemap</a></p>
+                <p><a href="legal.html">Legal</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "social-icons";
+  src:url("fonts/social-icons.eot");
+  src:url("fonts/social-icons.eot?#iefix") format("embedded-opentype"),
+    url("fonts/social-icons.woff") format("woff"),
+    url("fonts/social-icons.ttf") format("truetype"),
+    url("fonts/social-icons.svg#social-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "social-icons" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="social-"]:before,
+[class*=" social-"]:before {
+  font-family: "social-icons" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.social-amazon:before {
+  content: "\61";
+}
+.social-behance:before {
+  content: "\63";
+}
+.social-blogger:before {
+  content: "\64";
+}
+.social-deviantart:before {
+  content: "\65";
+}
+.social-dribble:before {
+  content: "\66";
+}
+.social-ebay:before {
+  content: "\67";
+}
+.social-facebook:before {
+  content: "\68";
+}
+.social-flickr:before {
+  content: "\69";
+}
+.social-google:before {
+  content: "\6a";
+}
+.social-instagram:before {
+  content: "\6b";
+}
+.social-linkedin:before {
+  content: "\6c";
+}
+.social-paypal:before {
+  content: "\6d";
+}
+.social-pinterest:before {
+  content: "\6e";
+}
+.social-twitter:before {
+  content: "\6f";
+}
+.social-vimeo:before {
+  content: "\70";
+}
+.social-wordpress:before {
+  content: "\71";
+}
+.social-yelp:before {
+  content: "\72";
+}
+.social-youtube:before {
+  content: "\73";
+}
+.social-icn-mail-1:before {
+  content: "\74";
+}
+.social-icn-phone-1:before {
+  content: "\75";
+}
